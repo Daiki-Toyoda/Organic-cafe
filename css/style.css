@@ -1,0 +1,832 @@
+/* リセットCSS */
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    text-decoration: none;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	color: inherit;
+	vertical-align: middle;
+	text-align: inherit;
+	font: inherit;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* 全体 */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+h2 {
+    font-family: 'Palatino Linotype';
+    color: #2c7e45;
+    font-weight: bold;
+    font-style:oblique;
+    font-size: 62px;
+}
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+section {
+    padding-left: 17px;
+}
+
+.inner {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.wrap {
+    overflow: hidden;
+}
+
+
+
+/* ヘッダー */
+header {
+    display: flex;
+    background-color: rgba(255, 254, 255, 0.5);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding-left: 70px;
+    padding-right: 84px;
+    position: fixed;
+    z-index: 2;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo p {
+    color: #2c7e45;
+    font-weight: bold;
+    font-family: 'Palatino Linotype';
+    font-size: 18px;
+}
+
+.logo img {
+    max-width: none;
+}
+
+header ul {
+    display: flex;
+}
+
+header li {
+    list-style: none;
+    font-size: 28px;
+    margin-left: 27px;
+    font-family: 'Palatino Linotype';
+}
+
+
+header a {
+    color: #2c7e45;
+}
+
+header.open {
+    background-color: transparent;
+}
+
+  .Item-Text{
+    position: relative;
+    z-index: 1;
+  }
+  .Item-Text:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 0%;
+    height: 2px;
+    background: #2c7e45;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  .Item:hover .Item-Text:after{
+    width: 100%;
+  }
+
+  /* ハンバーガーメニュー */
+  nav {
+      display: none;
+  }
+
+  nav a {
+      color: #fff;
+      font-size: 24px;
+      font-family: 'Palatino Linotype';
+  }
+
+  .menu {
+    position: fixed;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    color: #efefef;
+    background-color: rgba(56, 56, 54, 0.8);
+    transition: .3s;
+  }
+
+  .menu-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bg-btn {
+    display: none;
+    width: 60px;
+    height: 60px;
+  }
+
+  .btn-line {
+	display: block;
+	position: relative;  
+	width: 100%;  
+	height: 4px;
+	background-color: #2c7e45;  
+	transition: .2s;
+}
+
+.menu.open {
+    right: 0;
+  }
+
+/* 上下のバーガー線 */
+.btn-line::before,
+.btn-line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #2c7e45;
+  transition: .5s;
+}
+.btn-line::before {
+  /* 上の線の位置 */
+  transform: translateY(-16px);
+}
+.btn-line::after {
+  /* 下の線の位置 */
+  transform: translateY(16px);
+}
+
+/* バーガーメニューオープン時 */
+.btn-line.open {
+	background-color: transparent; 
+}
+.btn-line.open::before ,
+.btn-line.open::after {
+	content: "";
+	background-color: #2c7e45; 
+	transition: .2s;
+}
+.btn-line.open::before {
+	transform: rotate(45deg); 
+}
+.btn-line.open::after {
+	transform: rotate(-45deg); 
+}
+
+/* タイトル */
+.title {
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-image: url(../img/toa-heftiba-W6sqUYlJRiw-unsplash.jpg);
+    min-height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.title h1 {
+    font-family: 'Palatino Linotype';
+    color: #2c7e45;
+    font-weight: bold;
+    font-size: 154px;
+    text-shadow:1px 1px 3px #000;
+}
+
+
+/* コンセプト */
+.Concept {
+    width: 100%;
+    background-color: #f7f4e8;
+    padding-top: 60px;
+}
+
+.Concept .inner {
+    display: flex;
+    padding-bottom: 178px;
+}
+
+.Concept-message {
+    width: 50%;
+    padding-right: 91px;
+}
+
+.Concept h2 {
+    margin-bottom: 21px;
+}
+
+.Concept p {
+    line-height: 2.03;
+    font-size: 16px;
+    font-family: '小塚ゴシック Pr6N';
+    letter-spacing: -0.014rem;
+}
+
+.Concept-img {
+    width: 50%;
+    padding-top: 9px;
+}
+
+.Concept img {
+    max-width: 582px;
+    max-height: 398px;
+    width: 100%;
+    height: 100%;
+}
+
+/* ニュース */
+.News {
+    background-color: #fff;
+}
+
+
+.News h2 {
+    margin-top: 60px;
+    margin-bottom: 64px;
+}
+
+.News-Contents {
+    border: 1px solid #1cac48;
+    border-radius: 10px;
+    width: 100%;
+    padding: 0 27px 0 10px;
+}
+
+.News ul {
+    margin-bottom: 10px;
+}
+
+.News li {
+    font-size: 18px;
+    padding-top: 60px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #000;
+    letter-spacing: 0.079rem;
+}
+
+.day {
+    color: #000;
+    font-size: 18px;
+    padding-left: 16px;
+}
+
+.News .mar {
+    margin-right: 18px;
+}
+
+
+.btn {
+    display: inline-block;
+    background-color: #2c7e45;
+    font-size: 25px;
+    color: #fff;
+    padding: 9px 17px 14px 19px;
+    border-radius: 30px;
+    box-shadow:0px 3px #112b19;
+    cursor: pointer;
+}
+
+.btn:active {
+    box-shadow: none;
+    position: relative;
+    top: 3px;
+}
+
+.btn-wrapper {
+    margin-bottom: 14px;
+    margin-top: 14px;
+    display: flex;
+    justify-content: right;
+}
+
+.fa-play {
+    color: #fff;
+    font-size: 20px;
+    margin-left: 3px;
+}
+
+/* メニュー */
+.Menu {
+    background: #f7f4e8;
+    margin-top: 89px;
+    padding-top: 59px;
+    padding-bottom: 230px;
+}
+
+.Menu h2 {
+    margin-bottom: 57px;
+}
+
+.Drink-wrapper {
+    margin-bottom: 47px;
+}
+
+.Drink-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 37px;
+}
+
+.Menu .inner h3 {
+    font-family: 'Palatino Linotype';
+    color: #2c7e45;
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 33px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #2c7e45;
+}
+
+.Drink-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Drink-contents img {
+    margin-bottom: 7px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price p {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.price :nth-child(2) {
+    font-size: 21px;
+}
+
+.Food-title {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 42px;
+}
+
+
+.Food-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Food-contents img {
+    margin-bottom: 7px;
+}
+
+/* コンタクト */
+.Contact {
+    background-color: #282b2b;
+    color: #fff;
+    padding-top: 59px;
+    padding-bottom: 98px;
+}
+
+.Contact h2 {
+    color: #fff;
+    margin-bottom: 67px;
+}
+
+.mail-tell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 104px;
+}
+
+.mail-tell a {
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 36px;
+    display: block;
+    border-radius: 20px;
+}
+
+.mail i {
+    padding-right: 38px;
+    font-size: 36px;
+}
+
+.mail {
+    padding: 40px 33px 47px 49px;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    white-space: nowrap
+}
+
+.tell {
+    padding: 40px 135px 47px 47px;
+    letter-spacing: 0.16rem;
+    cursor: pointer;
+    white-space: nowrap
+}
+
+.tell i {
+    padding-right: 51px;
+    font-size: 36px;
+}
+
+
+.Access {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 138px;
+}
+
+.Access-info {
+    width: 45%;
+}
+
+.Access-info ul {
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 28px 0 34px 24px;
+}
+
+.Access-info li {
+    margin-bottom: 29px;
+    letter-spacing: 0.01rem;
+}
+
+.Access-info ul :nth-child(4) {
+    margin-bottom: 16px;
+}
+
+.mar-40 {
+    margin-right: 40px;
+}
+
+.mar-118 {
+    margin-right: 118px;
+}
+
+.Access-map {
+    width: 45%;
+}
+
+.Access-map iframe {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.icons {
+    text-align: center;
+    padding-left: 47px;
+}
+
+.icons a {
+    color: #282b2b;
+    background-color: #b8b8b8;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 41px;
+    margin-right: 46px;
+    width: 76px;
+    height: 74px;
+    box-shadow:0px 3px #413f3f;
+    cursor: pointer;
+    padding-top: 14px;
+}
+
+.icons a:active {
+    box-shadow: none;
+    position: relative;
+    top: 3px;
+}
+
+
+.fa-brands  {
+    vertical-align: middle;
+}
+
+/* フッター */
+footer {
+    background-color: #282b2b;
+    padding-left: 17px;
+    padding-bottom: 31px;
+}
+
+footer p {
+    color: #fff;
+    font-size: 21px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/***** タブレット用 *****/
+@media screen and (max-width: 1170px) {
+    section {
+        padding-right: 17px;
+    }
+
+    /* タイトル */
+    .title h1 {
+        font-size: 104px;
+    }
+
+    /* コンセプト */
+    .Concept .inner {
+        flex-direction: column;
+    }
+
+    .Concept-message {
+        width: 100%;
+        padding-right: 0px;
+    }
+
+
+    .Concept-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    
+    }
+    .Concept img {
+        max-width: 582px;
+        max-height: 398px;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* コンタクト */
+	.mail-tell {
+        flex-direction: column;
+    }
+
+    .mail {
+        margin-bottom: 20px;
+    }
+
+    .Access {
+        flex-direction: column;
+    }
+
+    .Access-info {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .Access-map {
+        width: 100%;
+    }
+
+}
+
+/***** スマホ用 *****/
+
+@media screen and (max-width: 768px) {
+
+    header {
+        padding-left: 30px;
+    }
+    
+    header li {
+        display: none;
+    }
+    nav {
+        display: block;
+    }
+
+    .bg-btn {
+        display: block;
+    }
+
+    /* タイトル */
+    .title h1 {
+        font-size: 54px;
+        text-shadow:1px 1px 1px #000;
+    }
+
+    /* コンセプト */
+    .Concept .inner {
+        padding-bottom: 89px;
+    }
+
+    .Concept img {
+        max-width: none;
+        max-height: none;
+    }
+
+
+
+    /* メニュー */
+    .Menu {
+        padding-bottom: 115px;
+    }
+    
+    .Drink-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Drink-contents {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .Drink-contents img {
+        width: 100%;
+    }
+
+    .price {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Food-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Food-contents {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .Food-contents img {
+        width: 100%;
+    }
+
+
+
+    /* コンタクト */
+    .mail-tell {
+        text-align: center;
+    }
+
+    .mail-tell a {
+        font-size: 21px;
+    }
+
+    .mail {
+        width: 100%;
+    }
+
+    .tell {
+        width: 100%;
+        padding-right: 95px;
+    }
+
+    .icons {
+        padding-left: 0px;
+    }
+
+    .icons a {
+        margin-right: 10px;
+    }
+
+}
