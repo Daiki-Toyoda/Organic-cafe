@@ -732,6 +732,14 @@ footer p {
 
     header {
         padding-left: 30px;
+        padding-right: 45px;
+    }
+    .logo img {
+        width: 65px;
+    }
+
+    .logo p {
+        font-size: 16px;
     }
     
     header li {
@@ -801,6 +809,10 @@ footer p {
         width: 100%;
     }
 
+    .btn {
+        font-size: 18px;
+    }
+
 
 
     /* コンタクト */
@@ -816,9 +828,17 @@ footer p {
         width: 100%;
     }
 
+    .mail i {
+        padding-right: 21px;
+    }
+
     .tell {
         width: 100%;
         padding-right: 95px;
+    }
+
+    .tell i {
+        padding-right: 21px;
     }
 
     .icons {
