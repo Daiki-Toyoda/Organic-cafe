@@ -182,11 +182,11 @@ header {
     color: #2c7e45;
     font-weight: bold;
     font-family: 'Palatino Linotype';
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .logo img {
-    max-width: none;
+    max-width: 50%;
 }
 
 header ul {
@@ -734,9 +734,6 @@ footer p {
         padding-left: 30px;
         padding-right: 45px;
     }
-    .logo img {
-        width: 65px;
-    }
 
     .logo p {
         font-size: 16px;
@@ -812,7 +809,6 @@ footer p {
     .btn {
         font-size: 18px;
     }
-
 
 
     /* コンタクト */
